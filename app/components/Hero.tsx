@@ -102,7 +102,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center px-6 relative overflow-hidden"
+      className="min-h-screen flex lg:items-center px-6 pt-32 pb-16 lg:pt-0 lg:pb-0 relative overflow-hidden"
       style={{
         backgroundImage: "url('/hero-background.jpg')",
         backgroundSize: "cover",
@@ -139,7 +139,7 @@ export default function Hero() {
       ))}
 
       {/* Content — two-column layout */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
 
         {/* LEFT: Text */}
         <motion.div
@@ -149,7 +149,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-2 sm:mb-4 mt-4 lg:mt-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -158,7 +158,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 min-h-[3rem] flex items-center"
+            className="text-xl sm:text-2xl lg:text-4xl font-semibold mb-4 sm:mb-6 min-h-[3rem] flex items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -192,17 +192,17 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div
-            className="flex gap-8 mb-8"
+            className="flex gap-6 sm:gap-8 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
           >
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col">
-                <span className="text-3xl sm:text-4xl font-bold text-[#D97757]">
+                <span className="text-2xl sm:text-4xl font-bold text-[#D97757]">
                   <Counter value={s.value} suffix={s.suffix} />
                 </span>
-                <span className="text-xs text-[#A3A3A3] mt-1">{s.label}</span>
+                <span className="text-[10px] sm:text-xs text-[#A3A3A3] mt-1">{s.label}</span>
               </div>
             ))}
           </motion.div>
@@ -234,7 +234,7 @@ export default function Hero() {
           <motion.img
             src="/avatar.png"
             alt="Adhit Avatar"
-            className="w-72 sm:w-80 lg:w-96 xl:w-[420px] object-contain drop-shadow-2xl select-none pointer-events-none"
+            className="w-64 sm:w-80 lg:w-96 xl:w-[420px] object-contain drop-shadow-2xl select-none pointer-events-none"
             draggable={false}
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
