@@ -102,13 +102,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex lg:items-center px-6 pt-32 pb-16 lg:pt-0 lg:pb-0 relative overflow-hidden"
-      style={{
-        backgroundImage: "url('/hero-background.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      className="min-h-screen flex lg:items-center px-6 pt-32 pb-16 lg:pt-0 lg:pb-0 relative overflow-hidden bg-[#0D0D0D]"
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60" />
