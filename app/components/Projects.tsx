@@ -97,6 +97,8 @@ const projects: Project[] = [
     emoji: "✍️",
     description: "Writing about technology, business operations, and digital systems.",
     skills: ["WordPress", "Writing", "Content Strategy", "SEO Optimization", "Analytics"],
+    image: "/hero-background.jpg",
+    link: "https://cahayasoft.wordpress.com/author/cahayasoft/",
   },
   {
     id: 7,
