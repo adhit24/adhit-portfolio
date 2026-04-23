@@ -197,6 +197,7 @@ const descriptions: Record<Category, string> = {
 
 export default function Projects() {
   const [active, setActive] = useState<Category>("Projects");
+  const [openId, setOpenId] = useState<number | null>(null);
   const filtered = projects.filter((p) => p.category === active);
 
   return (
@@ -221,7 +222,10 @@ export default function Projects() {
               return (
                 <button
                   key={cat}
-                  onClick={() => setActive(cat)}
+                  onClick={() => {
+                    setActive(cat);
+                    setOpenId(null);
+                  }}
                   className={`px-5 py-2 text-sm font-medium rounded-full transition-all ${
                     isActive
                       ? "bg-gradient-to-r from-[#D97757] to-[#EA580C] text-white"
@@ -242,6 +246,9 @@ export default function Projects() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filtered.map((p, i) => (
+            (() => {
+              const isOpen = openId === p.id;
+              return (
             <motion.div
               key={p.id}
               initial={{ opacity: 0, y: 40 }}
@@ -249,6 +256,11 @@ export default function Projects() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className={`group relative aspect-[16/10] rounded-2xl overflow-hidden bg-gradient-to-br ${p.gradient} border border-white/5 hover:border-[#D97757]/40 transition-all duration-500 cursor-pointer`}
+              onClick={(e) => {
+                const target = e.target as HTMLElement;
+                if (target.closest("a")) return;
+                setOpenId((curr) => (curr === p.id ? null : p.id));
+              }}
             >
               {/* Image background if provided */}
               {p.image && (
@@ -272,23 +284,12 @@ export default function Projects() {
                 </div>
               )}
 
-              {/* Base content - emoji + subtitle visible by default */}
-              <div
-                className={`absolute inset-0 p-6 flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 ${
-                  p.image ? "bg-gradient-to-t from-black/80 via-black/30 to-transparent" : ""
-                }`}
-              >
-                {p.emoji && <span className="text-5xl">{p.emoji}</span>}
-                <div>
-                  <p className="text-xs text-white/70 mb-1">{p.category}</p>
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                    {p.title}
-                  </h3>
-                </div>
-              </div>
-
               {/* Hover overlay - gradient with curtain animation */}
-              <div className={`curtain-overlay absolute inset-0 bg-gradient-to-br ${p.gradient} backdrop-blur-sm flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 scale-110 group-hover:scale-100 transition-all duration-500 p-4`}>
+              <div
+                className={`curtain-overlay absolute inset-0 bg-gradient-to-br ${p.gradient} backdrop-blur-sm flex flex-col items-center justify-center gap-4 transition-all duration-500 p-4 ${
+                  isOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-110 pointer-events-none"
+                } group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto`}
+              >
                 <h3 className="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-2xl text-center">
                   {p.title}
                 </h3>
@@ -349,6 +350,8 @@ export default function Projects() {
                 </div>
               </div>
             </motion.div>
+              );
+            })()
           ))}
         </div>
       </div>
