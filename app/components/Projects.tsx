@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "Rasa Kopi",
     subtitle: "Coffee Brand & Operations",
     category: "Projects",
-    gradient: "from-[#7C3AED] to-[#4C1D95]",
+    gradient: "from-[#D97757] to-[#7C2D12]",
     emoji: "",
     description: "Building a coffee business from scratch — community, experience, and operational excellence.",
     skills: ["Branding", "Operations", "Marketing", "Community Building", "Growth Strategy"],
@@ -131,7 +131,7 @@ const getSkillStyle = (skill: string) => {
     "JavaScript": { bg: "from-yellow-600/20 to-yellow-700/20", text: "text-yellow-300", icon: "JS" },
     "Python": { bg: "from-blue-600/20 to-green-600/20", text: "text-blue-300", icon: "🐍" },
     "SQL": { bg: "from-orange-600/20 to-orange-700/20", text: "text-orange-300", icon: "🗄️" },
-    "PHP": { bg: "from-purple-600/20 to-purple-700/20", text: "text-purple-300", icon: "🐘" },
+    "PHP": { bg: "from-orange-600/20 to-orange-700/20", text: "text-orange-300", icon: "🐘" },
     "HTML/CSS": { bg: "from-red-600/20 to-orange-600/20", text: "text-orange-300", icon: "🎨" },
     "Tailwind": { bg: "from-cyan-500/20 to-cyan-600/20", text: "text-cyan-300", icon: "🌊" },
     "Node.js": { bg: "from-green-600/20 to-green-700/20", text: "text-green-300", icon: "⬢" },
@@ -141,7 +141,7 @@ const getSkillStyle = (skill: string) => {
     "API Integration": { bg: "from-cyan-600/20 to-cyan-700/20", text: "text-cyan-300", icon: "🔗" },
     "Security": { bg: "from-red-600/20 to-red-700/20", text: "text-red-300", icon: "🔒" },
     "Cloud Infrastructure": { bg: "from-orange-500/20 to-orange-600/20", text: "text-orange-300", icon: "☁️" },
-    "Branding": { bg: "from-purple-600/20 to-pink-600/20", text: "text-purple-300", icon: "🎨" },
+    "Branding": { bg: "from-orange-600/20 to-amber-600/20", text: "text-orange-300", icon: "🎨" },
     "Marketing": { bg: "from-red-600/20 to-pink-600/20", text: "text-red-300", icon: "📈" },
     "Operations": { bg: "from-slate-600/20 to-slate-700/20", text: "text-slate-300", icon: "⚙️" },
     "Growth Strategy": { bg: "from-emerald-600/20 to-emerald-700/20", text: "text-emerald-300", icon: "📊" },
@@ -161,7 +161,7 @@ const getSkillStyle = (skill: string) => {
     "WordPress": { bg: "from-blue-600/20 to-blue-700/20", text: "text-blue-300", icon: "📝" },
     "Writing": { bg: "from-gray-600/20 to-gray-700/20", text: "text-gray-300", icon: "✍️" },
     "SEO Optimization": { bg: "from-green-600/20 to-green-700/20", text: "text-green-300", icon: "🔍" },
-    "Content Strategy": { bg: "from-purple-600/20 to-purple-700/20", text: "text-purple-300", icon: "📚" },
+    "Content Strategy": { bg: "from-orange-600/20 to-orange-700/20", text: "text-orange-300", icon: "📚" },
     "Technical Documentation": { bg: "from-blue-600/20 to-blue-700/20", text: "text-blue-300", icon: "📖" },
     "Publishing": { bg: "from-gray-600/20 to-gray-700/20", text: "text-gray-300", icon: "📰" },
     "Analytics": { bg: "from-emerald-600/20 to-emerald-700/20", text: "text-emerald-300", icon: "📊" },
@@ -224,7 +224,7 @@ export default function Projects() {
                   onClick={() => setActive(cat)}
                   className={`px-5 py-2 text-sm font-medium rounded-full transition-all ${
                     isActive
-                      ? "bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] text-white"
+                      ? "bg-gradient-to-r from-[#D97757] to-[#EA580C] text-white"
                       : "text-[#A3A3A3] hover:text-white"
                   }`}
                 >
